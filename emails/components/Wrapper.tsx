@@ -7,6 +7,7 @@ import {Link} from "@react-email/link"
 import {Img} from "@react-email/img"
 import * as React from "react"
 import {createTheme} from "@mui/material"
+import logo from "../base64-images/logo"
 
 export default function Wrapper({children}): React.ReactElement {
 	return (
@@ -25,11 +26,11 @@ export default function Wrapper({children}): React.ReactElement {
 						backgroundColor: theme.palette.background.paper,
 						width: "360px",
 						margin: "20px auto 20px auto",
-						padding: "68px 0 50px",
+						padding: "68px 0 80px",
 					}}
 				>
 					<Img
-						src="/static/logo.png"
+						src={logo}
 						style={{
 							margin: "0 auto",
 							width: "200px",

@@ -6,8 +6,10 @@ import {Img} from "@react-email/img"
 import * as React from "react"
 import Wrapper, {theme} from "./components/Wrapper"
 import Content from "./components/Content"
-
-console.log(theme.palette.error.main)
+import emailIcon from "./base64-images/email"
+import serverNotIcon from "./base64-images/server-not"
+import webNotIcon from "./base64-images/web-not"
+import arrowRightIcon from "./base64-images/arrow-right"
 
 export default function Email() {
 	return (
@@ -43,19 +45,19 @@ export default function Email() {
 				</Section>
 				<Section>
 					<Column>
-						<Img src="/static/email.png" alt="Email" width="64" />
+						<Img src={emailIcon} alt="Email" width="64" />
 					</Column>
 					<Column>
-						<Img src="/static/arrow-right.png" alt="Email" width="32" />
+						<Img src={arrowRightIcon} alt="right arrow" width="32" />
 					</Column>
 					<Column>
-						<Img src="/static/logo_bw_not.png" alt="Email" width="64" />
+						<Img src={serverNotIcon} alt="Server" width="64" />
 					</Column>
 					<Column>
-						<Img src="/static/arrow-right.png" alt="Email" width="32" />
+						<Img src={arrowRightIcon} alt="right arrow" width="32" />
 					</Column>
 					<Column>
-						<Img src="/static/web_not.png" alt="Email" width="64" />
+						<Img src={webNotIcon} alt="Web" width="64" />
 					</Column>
 				</Section>
 				<Section
@@ -75,9 +77,4 @@ export default function Email() {
 			</Content>
 		</Wrapper>
 	)
-}
-
-const textBody = {
-	color: theme.palette.text.secondary,
-	fontSize: "14px",
 }
