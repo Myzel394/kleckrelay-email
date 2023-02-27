@@ -1,10 +1,11 @@
-import Wrapper, {theme} from "./components/Wrapper"
-import Content from "./components/Content"
 import {Heading} from "@react-email/heading"
 import {Section} from "@react-email/section"
 import {Text} from "@react-email/text"
 import {Column} from "@react-email/column"
 import {Img} from "@react-email/img"
+import * as React from "react"
+import Wrapper, {theme} from "./components/Wrapper"
+import Content from "./components/Content"
 
 export default function Email() {
 	return (

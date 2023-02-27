@@ -1,7 +1,7 @@
-import {ReactElement} from "react"
 import {Section} from "@react-email/section"
+import * as React from "react"
 
-export default function Content({children}): ReactElement {
+export default function Content({children}): React.ReactElement {
 	return <Section style={containerPadding}>{children}</Section>
 }
 

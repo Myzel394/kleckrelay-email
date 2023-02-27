@@ -1,15 +1,14 @@
-import React, {ReactElement} from "react"
-
 import {Html} from "@react-email/html"
 import {Head} from "@react-email/head"
 import {Preview} from "@react-email/preview"
 import {Container} from "@react-email/container"
-import {createTheme} from "@mui/material"
 import {Body} from "@react-email/body"
 import {Link} from "@react-email/link"
 import {Img} from "@react-email/img"
+import * as React from "react"
+import {createTheme} from "@mui/material"
 
-export default function Wrapper({children}): ReactElement {
+export default function Wrapper({children}): React.ReactElement {
 	return (
 		<Html>
 			<Head />

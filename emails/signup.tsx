@@ -1,8 +1,8 @@
-import * as React from "react"
 import {Heading} from "@react-email/heading"
 import {Section} from "@react-email/section"
 import {Text} from "@react-email/text"
 import {Button} from "@react-email/button"
+import * as React from "react"
 import Wrapper, {theme} from "./components/Wrapper"
 import Content from "./components/Content"
 
