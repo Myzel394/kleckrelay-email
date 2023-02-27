@@ -6,8 +6,6 @@ import {Text} from "@react-email/text"
 import {Column} from "@react-email/column"
 import {Img} from "@react-email/img"
 
-console.log(theme.palette.error.main)
-
 export default function Email() {
 	return (
 		<Wrapper>
