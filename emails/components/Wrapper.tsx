@@ -59,7 +59,7 @@ export default function Wrapper({children}): ReactElement {
 	)
 }
 
-const theme = createTheme({
+export const theme = createTheme({
 	palette: {
 		background: {
 			default: "#eee",

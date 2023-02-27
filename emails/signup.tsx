@@ -1,30 +1,15 @@
-import {Html} from "@react-email/html"
-import {Head} from "@react-email/head"
-import {Preview} from "@react-email/preview"
-import {Body} from "@react-email/body"
-import {createTheme} from "@mui/material"
-import {Container} from "@react-email/container"
 import * as React from "react"
-import {Img} from "@react-email/img"
 import {Heading} from "@react-email/heading"
 import {Section} from "@react-email/section"
 import {Text} from "@react-email/text"
 import {Button} from "@react-email/button"
-import {Link} from "@react-email/link"
-import Wrapper from "./components/Wraper"
-
-const theme = createTheme({
-	palette: {
-		background: {
-			default: "#eee",
-		},
-	},
-})
+import Wrapper, {theme} from "./components/Wrapper"
+import Content from "./components/Content"
 
 export default function Email() {
 	return (
 		<Wrapper>
-			<Section style={containerPadding}>
+			<Content>
 				<Heading
 					mt="25"
 					style={{
@@ -37,7 +22,7 @@ export default function Email() {
 					{"{{ title }}"}
 				</Heading>
 				<Text style={textBody}>{"{{ body }}"}</Text>
-			</Section>
+			</Content>
 			<Section
 				style={{
 					backgroundColor: theme.palette.background.default,
@@ -62,16 +47,11 @@ export default function Email() {
 					{"{{ verify_text }}"}
 				</Button>
 			</Section>
-			<Section style={containerPadding}>
+			<Content>
 				<Text style={textBody}>{"{{ body_not_requested }}"}</Text>
-			</Section>
+			</Content>
 		</Wrapper>
 	)
-}
-
-const containerPadding = {
-	padding: "0 30px",
-	margin: "0 auto",
 }
 
 const textBody = {
