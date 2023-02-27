@@ -10,6 +10,8 @@ import {Heading} from "@react-email/heading"
 import {Section} from "@react-email/section"
 import {Text} from "@react-email/text"
 import {Button} from "@react-email/button"
+import {Link} from "@react-email/link"
+import Wrapper from "./components/Wraper"
 
 const theme = createTheme({
 	palette: {
@@ -21,93 +23,58 @@ const theme = createTheme({
 
 export default function Email() {
 	return (
-		<Html>
-			<Head />
-			<Preview>{"{{ preview_text }}"}</Preview>
-			<Body
+		<Wrapper>
+			<Section style={containerPadding}>
+				<Heading
+					mt="25"
+					style={{
+						textAlign: "center",
+						fontSize: "30px",
+						color: theme.palette.text.primary,
+					}}
+					as="h1"
+				>
+					{"{{ title }}"}
+				</Heading>
+				<Text style={textBody}>{"{{ body }}"}</Text>
+			</Section>
+			<Section
 				style={{
 					backgroundColor: theme.palette.background.default,
-					fontFamily: "HelveticaNeue,Helvetica,Roboto,Arial,sans-serif",
+					verticalAlign: "middle",
+					textAlign: "center",
+					padding: "20px 0",
 				}}
 			>
-				<Container
+				<Button
+					href="{{ verify_url }}"
+					pX={20}
+					pY={10}
 					style={{
-						boxShadow: "0 5px 10px rgba(20,50,70,.2)",
-						backgroundColor: theme.palette.background.paper,
-						width: "360px",
-						margin: "20px auto 20px auto",
-						padding: "68px 0 50px",
+						backgroundColor: "black",
+						color: "white",
+						borderRadius: "10px",
+						margin: "0 auto",
+						textAlign: "center",
+						textDecoration: "none",
 					}}
 				>
-					<Section style={containerPadding}>
-						<Img
-							src="/static/logo.png"
-							style={{
-								margin: "0 auto",
-								width: "200px",
-							}}
-						/>
-						<Heading
-							mt="25"
-							style={{
-								textAlign: "center",
-								fontSize: "30px",
-								color: theme.palette.text.primary,
-							}}
-							as="h1"
-						>
-							{"{{ title }}"}
-						</Heading>
-						<Text
-							style={{
-								color: theme.palette.text.secondary,
-								fontSize: "14px",
-							}}
-						>
-							{"{{ body }}"}
-						</Text>
-					</Section>
-					<Section
-						style={{
-							backgroundColor: theme.palette.background.default,
-							verticalAlign: "middle",
-							textAlign: "center",
-							padding: "20px 0",
-						}}
-					>
-						<Button
-							href="{{ verify_url }}"
-							pX={20}
-							pY={10}
-							style={{
-								backgroundColor: "black",
-								color: "white",
-								borderRadius: "10px",
-								margin: "0 auto",
-								textAlign: "center",
-								textDecoration: "none",
-							}}
-						>
-							{"{{ verify_text }}"}
-						</Button>
-					</Section>
-					<Section style={containerPadding}>
-						<Text
-							style={{
-								color: theme.palette.text.secondary,
-								fontSize: "14px",
-							}}
-						>
-							{"{{ body_not_requested }}"}
-						</Text>
-					</Section>
-				</Container>
-			</Body>
-		</Html>
+					{"{{ verify_text }}"}
+				</Button>
+			</Section>
+			<Section style={containerPadding}>
+				<Text style={textBody}>{"{{ body_not_requested }}"}</Text>
+			</Section>
+		</Wrapper>
 	)
 }
 
 const containerPadding = {
 	padding: "0 30px",
 	margin: "0 auto",
+}
+
+const textBody = {
+	color: theme.palette.text.secondary,
+	fontSize: "16px",
 }
