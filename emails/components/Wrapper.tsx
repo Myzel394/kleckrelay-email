@@ -16,17 +16,18 @@ export default function Wrapper({children}): React.ReactElement {
 			<Preview>{"{{ preview_text }}"}</Preview>
 			<Body
 				style={{
-					backgroundColor: theme.palette.background.default,
+					backgroundColor: theme.palette.background.paper,
 					fontFamily: "HelveticaNeue,Helvetica,Roboto,Arial,sans-serif",
 				}}
 			>
 				<Container
 					style={{
-						boxShadow: "0 5px 10px rgba(20,50,70,.2)",
 						backgroundColor: theme.palette.background.paper,
-						width: "360px",
-						margin: "20px auto 20px auto",
-						padding: "68px 0 80px",
+						border: "1px solid #ddd",
+						borderRadius: "15px",
+						maxWidth: "500px",
+						margin: "20px auto",
+						padding: "68px 80px 68px",
 					}}
 				>
 					<Img
