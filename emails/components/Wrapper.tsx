@@ -46,13 +46,13 @@ export default function Wrapper({children}): React.ReactElement {
 					}}
 				>
 					<Link
-						href="{{ server_url }}"
+						href="{{ server_url | safe }}"
 						style={{
 							color: theme.palette.text.secondary,
 							fontSize: "14px",
 						}}
 					>
-						{"{{ server_url }}"}
+						{"{{ server_url | safe }}"}
 					</Link>
 				</Container>
 			</Body>

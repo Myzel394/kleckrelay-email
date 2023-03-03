@@ -32,7 +32,7 @@ export default function Email() {
 				}}
 			>
 				<Button
-					href="{{ verify_url }}"
+					href="{{ verify_url | safe }}"
 					pX={20}
 					pY={10}
 					style={{
